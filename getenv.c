@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * get_environ - the replicate string array of the environment is returned
+ * bring_environ - the replicate string array of the environment is returned
  * @info: The struct that has arguments with potential. For maintaining
  * the prototype of the function that is constant.
  * Return: 0 always
  */
-char **get_environ(info_t *info)
+char **bring_environ(info_t *info)
 {
 	if (!info->environ || info->env_changed)
 	{
@@ -18,13 +18,13 @@ char **get_environ(info_t *info)
 }
 
 /**
- * _unsetenv - environ var is removed
+ * _unputenv - environ var is removed
  * @info: The structure that has the arguments with potential. For maintaining
  * the prototype with a function that is constant.
  *  Return: 1 for erase, otherwise 0
  * @var: property of the string environ variable
  */
-int _unsetenv(info_t *info, char *var)
+int _unputenv(info_t *info, char *var)
 {
 	list_t *node = info->env;
 	size_t i = 0;
@@ -50,7 +50,7 @@ int _unsetenv(info_t *info, char *var)
 }
 
 /**
- * _setenv - New environment var is initialized,
+ * _putenv - New environment var is initialized,
  * and or a modified one
  * @info: Struct that have arguments with potential. For maintaining
  * the prototype constant function
@@ -58,7 +58,7 @@ int _unsetenv(info_t *info, char *var)
  * @value: the value of the string environ variable
  *  Return: 0 always
  */
-int _setenv(info_t *info, char *var, char *value)
+int _putenv(info_t *info, char *var, char *value)
 {
 	char *buf = NULL;
 	list_t *node;

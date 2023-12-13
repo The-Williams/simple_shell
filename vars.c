@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * is_chain - used to test whether the current char in buffer is a chain delimeter
+ * this_chain - used to test whether the current char in buffer is a chain delimeter
  * @info: the struct parameter
  * @buf: the buffer char
  * @p: current position address in buf
  *
  * Return: 1 if chain delimeter, 0 otherwise
  */
-int is_chain(info_t *info, char *buf, size_t *p)
+int this_chain(info_t *info, char *buf, size_t *p)
 {
 	size_t j = *p;
 
@@ -70,12 +70,12 @@ void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 }
 
 /**
- * replace_alias - displaces aliases in the tokenized string
+ * repl_alias - displaces aliases in the tokenized string
  * @info: the struct of the parameter
  *
  * Return: 1 if replaced, 0 otherwise
  */
-int replace_alias(info_t *info)
+int repl_alias(info_t *info)
 {
 	int i;
 	list_t *node;
@@ -99,12 +99,12 @@ int replace_alias(info_t *info)
 }
 
 /**
- * replace_vars - displaces vars in the tokenized string
+ * repl_vars - displaces vars in the tokenized string
  * @info: the struct in the parameter
  *
  * Return: 1 if replaced, 0 else
  */
-int replace_vars(info_t *info)
+int repl_vars(info_t *info)
 {
 	int i = 0;
 	list_t *node;
