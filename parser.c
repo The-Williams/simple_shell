@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * is_cmd - if a file is an executable command it decides
+ * my_cmd - if a file is an executable command it decides
  * @info: the struct info
  * @path: file path
  *
  * Return: 1 if true, 0 else
  */
-int is_cmd(info_t *info, char *path)
+int my_cmd(info_t *info, char *path)
 {
 	struct stat st;
 

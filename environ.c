@@ -1,25 +1,25 @@
 #include "shell.h"
 
 /**
- * _myenv - current environ is printed
- * @info: Potential arguments structure. For maintaining
+ * _myownenv - the intent environ is printed
+ * @info: for the requisite arguments structure. For maintaining
  * a prototype of a constant function.
  * Return: 0
  */
-int _myenv(info_t *info)
+int _myownenv(info_t *info)
 {
 	print_list_str(info->env);
 	return (0);
 }
 
 /**
- * _getenv - environ var value is got
- * @info: Structure containing potential arguments
- * @name: the name of the environ variable
+ * _getmyenv - environ of the var value is got here
+ * @info: The structure containing the potential arguments
+ * @name: the name of the environ variable present
  *
  * Return: value
  */
-char *_getenv(info_t *info, const char *name)
+char *_getmyenv(info_t *info, const char *name)
 {
 	list_t *node = info->env;
 	char *p;
@@ -35,13 +35,13 @@ char *_getenv(info_t *info, const char *name)
 }
 
 /**
- * _mysetenv - environ variable is initialized,
+ * _myputenv - environ variable is initialized,
  * or an already existing one modified
  * @info: Struct that have arguments with potential. For maintaining
  * prototype with a constant function.
  * Return: 0
  */
-int _mysetenv(info_t *info)
+int _myputenv(info_t *info)
 {
 	if (info->argc != 3)
 	{
@@ -54,12 +54,12 @@ int _mysetenv(info_t *info)
 }
 
 /**
- * _myunsetenv - Environ variable is removed
+ * _myunputenv - Environ variable is removed
  * @info: Struct that has arguments with potential. For maintaining
  * function with a constant prototype.
  * Return: 0
  */
-int _myunsetenv(info_t *info)
+int _myunputenv(info_t *info)
 {
 	int i;
 
@@ -75,12 +75,12 @@ int _myunsetenv(info_t *info)
 }
 
 /**
- * populate_env_list - environ list that is linked is populated
+ * create_env_list - environ list that is linked is populated
  * @info: Struct arguments with potential. For maintaining
  * function with a constant prototype.
  * Return: 0
  */
-int populate_env_list(info_t *info)
+int create_env_list(info_t *info)
 {
 	list_t *node = NULL;
 	size_t i;
