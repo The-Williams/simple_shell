@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _erratoi - integer is converted from a string
+ * _erroratoi - integer is converted from a string
  * @s: string to convert
  * Return: 0 for no num in string, num converted
- *       -1 for error
+ * -1 for error
  */
-int _erratoi(char *s)
+int _erroratoi(char *s)
 {
 	int i = 0;
 	unsigned long int result = 0;
@@ -29,13 +29,13 @@ int _erratoi(char *s)
 }
 
 /**
- * print_error - error message is printed
+ * print_err - error message is printed
  * @info: struct of the return information and parameter
  * @estr: string with specific type of error
  * Return: 0 for no num in string, num converted
  * -1 on error
  */
-void print_error(info_t *info, char *estr)
+void print_err(info_t *info, char *estr)
 {
 	_eputs(info->fname);
 	_eputs(": ");
@@ -47,13 +47,13 @@ void print_error(info_t *info, char *estr)
 }
 
 /**
- * print_d - decimal (integer) num (base 10) is printed by this function
+ * print_dec - decimal (integer) num (base 10) is printed by this function
  * @input: input
  * @fd: writeable file descriptor
  *
  * Return: char printed num
  */
-int print_d(int input, int fd)
+int print_dec(int input, int fd)
 {
 	int (*__putchar)(char) = _putchar;
 	int i, count = 0;
@@ -86,14 +86,14 @@ int print_d(int input, int fd)
 }
 
 /**
- * convert_number - a clone of itoa, function converter
+ * convert_num - a clone of itoa, function converter
  * @num: the num
  * @base: the base
  * @flags: the flags argument
  *
  * Return: the string
  */
-char *convert_number(long int num, int base, int flags)
+char *convert_num(long int num, int base, int flags)
 {
 	static char *array;
 	static char buffer[50];
@@ -122,12 +122,12 @@ char *convert_number(long int num, int base, int flags)
 }
 
 /**
- * remove_comments - first instance of '#' is replaced with '\0'
+ * remove_com - first instance of '#' is replaced with '\0'
  * @buf: modified string address
  *
  * Return: 0;
  */
-void remove_comments(char *buf)
+void remove_com(char *buf)
 {
 	int i;
 

@@ -75,12 +75,12 @@ list_t *add_node_end(list_t **head, const char *str, int num)
 }
 
 /**
- * print_list_str - only the str element of a list_t linked list is printed
+ * print_lst_str - only the str element of a list_t linked list is printed
  * @h: first node pointer
  *
  * Return: list size
  */
-size_t print_list_str(const list_t *h)
+size_t print_lst_str(const list_t *h)
 {
 	size_t i = 0;
 
@@ -95,13 +95,13 @@ size_t print_list_str(const list_t *h)
 }
 
 /**
- * delete_node_at_index - gets rid of a node at given index
+ * del_node_at_index - gets rid of a node at given index
  * @head: first node address of a pointer
  * @index: deleten the index of a nod
  *
  * Return: 1 on success, 0 on failure
  */
-int delete_node_at_index(list_t **head, unsigned int index)
+int del_node_at_index(list_t **head, unsigned int index)
 {
 	list_t *node, *prev_node;
 	unsigned int i = 0;
@@ -135,12 +135,12 @@ int delete_node_at_index(list_t **head, unsigned int index)
 }
 
 /**
- * free_list - all nodes of a list are freede here
+ * free_lst - all nodes of a list are freede here
  * @head_ptr: head node's address of a pointer
  *
  * Return: void
  */
-void free_list(list_t **head_ptr)
+void free_lst(list_t **head_ptr)
 {
 	list_t *node, *next_node, *head;
 

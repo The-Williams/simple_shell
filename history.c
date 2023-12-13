@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * get_history_file - file of the history is got
+ * get_hist_file - file of the history is got
  * @info: structure of the parameter
  *
  * Return: history file in the allocated string
  */
 
-char *get_history_file(info_t *info)
+char *get_hist_file(info_t *info)
 {
 	char *buf, *dir;
 
@@ -25,12 +25,12 @@ char *get_history_file(info_t *info)
 }
 
 /**
- * write_history - an existing file is modified or file is created
+ * write_hist - an existing file is modified or file is created
  * @info: structure of the parameter
  *
  * Return: success 1, -1 else
  */
-int write_history(info_t *info)
+int write_hist(info_t *info)
 {
 	ssize_t fd;
 	char *filename = get_history_file(info);
@@ -54,12 +54,12 @@ int write_history(info_t *info)
 }
 
 /**
- * read_history - file history reader
+ * read_hist - file history reader
  * @info: structure of the parameter
  *
- * Return: for success histcount, otherwise 0
+ * Return: for success hist count, otherwise 0
  */
-int read_history(info_t *info)
+int read_hist(info_t *info)
 {
 	int i, last = 0, linecount = 0;
 	ssize_t fd, rdlen, fsize = 0;
@@ -103,14 +103,14 @@ int read_history(info_t *info)
 }
 
 /**
- * build_history_list - linked list history entry addition
+ * build_hist_lst - linked list history entry addition
  * @info: The struct that has the arguments with potential. For maintaining
  * @buf: the buff
  * @linecount: histcount, linecount of the history
  *
  * Return: 0 always
  */
-int build_history_list(info_t *info, char *buf, int linecount)
+int build_hist_lst(info_t *info, char *buf, int linecount)
 {
 	list_t *node = NULL;
 
@@ -124,12 +124,12 @@ int build_history_list(info_t *info, char *buf, int linecount)
 }
 
 /**
- * renumber_history - linked list of the history renumbered after changes
+ * renumb_hist - linked list of the history renumbered after changes
  * @info: The structure that has the arguments with potential. For maintaining
  *
- * Return: histcount which is new
+ * Return: hist count which is new
  */
-int renumber_history(info_t *info)
+int renumb_hist(info_t *info)
 {
 	list_t *node = info->history;
 	int i = 0;
